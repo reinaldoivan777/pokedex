@@ -1,24 +1,22 @@
 import React, { Fragment } from "react";
-import { Card, Image, Grid, Label } from "semantic-ui-react";
+import { Col, Card, Badge } from "react-bootstrap";
 
 const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
   return (
     <Fragment>
-      <Grid.Column>
+      <Col xs={12} sm={4} className="my-3">
         <Card>
-          <Image src={image} wrapped size="small" centered />
-          <Card.Content>
-            <Card.Header>{`${number} --- ${name}`}</Card.Header>
-            <Card.Description>
-              {types.map(type => (
-                <Label as="a" color="teal" key={type}>
-                  {type}
-                </Label>
-              ))}
-            </Card.Description>
-          </Card.Content>
+          <Card.Img variant="top" src={image} />
+          <Card.Body>
+            <Card.Title>{`${number} - ${name}`}</Card.Title>
+            {types.map(type => (
+              <Badge className="mr-1" key={type} variant="primary">
+                {type}
+              </Badge>
+            ))}
+          </Card.Body>
         </Card>
-      </Grid.Column>
+      </Col>
     </Fragment>
   );
 };

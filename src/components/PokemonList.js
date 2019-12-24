@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { Grid } from "semantic-ui-react";
+import { Row } from "react-bootstrap";
+import { debounce } from "lodash";
 
 import PokemonCard from "./PokemonCard";
+import Loading from "./Loading";
 
 const POKEMONS_LIST_QUERY = gql`
-  query PokemonList {
-    pokemons(first: 30) {
+  query PokemonList($fetchNumber: Int!) {
+    pokemons(first: $fetchNumber) {
       name
       id
       number
@@ -18,20 +20,53 @@ const POKEMONS_LIST_QUERY = gql`
 `;
 
 export class PokemonList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fetchNumber: 30,
+      firstLoad: true
+    };
+  }
+
+  handleScroll = debounce(() => {
+    const { fetchNumber } = this.state;
+    let currentNumber = fetchNumber;
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      currentNumber += 15;
+      this.setState({
+        firstLoad: false,
+        fetchNumber: currentNumber
+      });
+    }
+  }, 100);
+
+  componentDidMount = () =>
+    window.addEventListener("scroll", this.handleScroll);
+
+  componentWillUnmount = () =>
+    window.removeEventListener("scroll", this.handleScroll);
+
   render() {
+    const { fetchNumber, firstLoad } = this.state;
     return (
       <Fragment>
-        <Query query={POKEMONS_LIST_QUERY}>
+        <Query query={POKEMONS_LIST_QUERY} variables={{ fetchNumber }}>
           {({ loading, error, data }) => {
-            if (loading) return <h4>Loading...</h4>;
+            if (loading && firstLoad) return <Loading show={true} />;
             if (error) console.log(error);
 
             return (
-              <Grid stackable columns={3}>
-                {data.pokemons.map((pokemon, index) => (
-                  <PokemonCard pokemon={pokemon} key={index} />
-                ))}
-              </Grid>
+              <Fragment>
+                <Row>
+                  {data.pokemons.map((pokemon, index) => (
+                    <PokemonCard pokemon={pokemon} key={index} />
+                  ))}
+                </Row>
+                {loading && <Loading />}
+              </Fragment>
             );
           }}
         </Query>

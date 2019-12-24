@@ -2,7 +2,7 @@ import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Container } from "semantic-ui-react";
+import { Container } from "react-bootstrap";
 import "./App.css";
 
 import PokemonList from "./components/PokemonList";
