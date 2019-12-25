@@ -1,21 +1,22 @@
 import React, { Fragment } from "react";
-import { Col, Card, Badge } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+import Badges from "./common/Badges";
 
 const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
   return (
     <Fragment>
       <Col xs={12} sm={4} className="my-3">
-        <Card>
-          <Card.Img variant="top" src={image} />
-          <Card.Body>
-            <Card.Title>{`${number} - ${name}`}</Card.Title>
-            {types.map(type => (
-              <Badge className="mr-1" key={type} variant="primary">
-                {type}
-              </Badge>
-            ))}
-          </Card.Body>
-        </Card>
+        <Link to={`/pokemon/${id}`}>
+          <Card>
+            <Card.Img variant="top" src={image} />
+            <Card.Body>
+              <Card.Title>{`${number} - ${name}`}</Card.Title>
+              <Badges datas={types} variant="info" />
+            </Card.Body>
+          </Card>
+        </Link>
       </Col>
     </Fragment>
   );

@@ -5,7 +5,7 @@ import { Row } from "react-bootstrap";
 import { debounce } from "lodash";
 
 import PokemonCard from "./PokemonCard";
-import Loading from "./Loading";
+import Loading from "./common/Loading";
 
 const POKEMONS_LIST_QUERY = gql`
   query PokemonList($fetchNumber: Int!) {
@@ -53,9 +53,10 @@ export class PokemonList extends Component {
     const { fetchNumber, firstLoad } = this.state;
     return (
       <Fragment>
+        <h1 className="my-3">POKEDEX</h1>
         <Query query={POKEMONS_LIST_QUERY} variables={{ fetchNumber }}>
           {({ loading, error, data }) => {
-            if (loading && firstLoad) return <Loading show={true} />;
+            if (loading && firstLoad) return <Loading />;
             if (error) console.log(error);
 
             return (

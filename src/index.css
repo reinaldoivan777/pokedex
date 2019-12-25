@@ -29,3 +29,10 @@ code {
 .card:hover {
   opacity: 0.5;
 }
+
+.image-profile {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
