@@ -5,6 +5,7 @@ import { Card, ListGroup } from "react-bootstrap";
 
 import Loading from "./common/Loading";
 import Badges from "./common/Badges";
+import Evolutions from "./Evolutions";
 
 const POKEMON_DETAIL = gql`
   query PokemonDetail($id: String) {
@@ -46,7 +47,14 @@ export class PokemonDetail extends Component {
             if (loading) return <Loading />;
             if (error) console.log(error);
 
-            const { name, types, resistant, weaknesses, image } = data.pokemon;
+            const {
+              name,
+              types,
+              resistant,
+              weaknesses,
+              image,
+              evolutions
+            } = data.pokemon;
 
             return (
               <div className="text-center my-3 pokemon-detail">
@@ -71,6 +79,12 @@ export class PokemonDetail extends Component {
                         </ListGroup.Item>
                       </ListGroup>
                     </div>
+                    {evolutions && (
+                      <Fragment>
+                        <div className="text-secondary my-2">Evolutions</div>
+                        <Evolutions datas={evolutions} />
+                      </Fragment>
+                    )}
                   </Card.Body>
                 </Card>
               </div>

@@ -9,7 +9,7 @@ const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
     <Fragment>
       <Col xs={12} sm={4} className="my-3">
         <Link to={`/pokemon/${id}`}>
-          <Card>
+          <Card className="card-home">
             <Card.Img variant="top" src={image} />
             <Card.Body>
               <Card.Title>{`${number} - ${name}`}</Card.Title>
