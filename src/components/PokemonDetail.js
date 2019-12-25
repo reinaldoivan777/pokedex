@@ -15,18 +15,6 @@ const POKEMON_DETAIL = gql`
       resistant
       image
       weaknesses
-      attacks {
-        special {
-          name
-          type
-          damage
-        }
-        fast {
-          name
-          type
-          damage
-        }
-      }
       evolutions {
         id
         number
