@@ -34,7 +34,7 @@ code {
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .pokemon-detail {
@@ -54,7 +54,7 @@ a:hover {
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .evolution-item {
