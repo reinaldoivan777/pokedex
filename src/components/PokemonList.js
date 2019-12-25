@@ -61,7 +61,7 @@ export class PokemonList extends Component {
         <div className="row">
           <div className="offset-sm-4 col-sm-4">
             <input
-              placeholder="Filter by Name"
+              placeholder="Search"
               className="form-control"
               onChange={e => this.handleChange(e.target.value)}
             />

@@ -3,8 +3,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import "./App.css";
 
+import "./App.css";
 import PokemonList from "./components/PokemonList";
 import PokemonDetail from "./components/PokemonDetail";
 
@@ -18,9 +18,9 @@ function App() {
       <Router>
         <Container>
           <div className="App">
-            <Link to="/">
-              <h1 className="my-3">POKEDEX</h1>
-            </Link>
+            <h1 className="my-3">
+              <Link to="/">POKEDEX</Link>
+            </h1>
 
             <Route exact path="/" component={PokemonList} />
             <Route exact path="/pokemon/:id" component={PokemonDetail} />
