@@ -53,7 +53,6 @@ export class PokemonList extends Component {
     const { fetchNumber, firstLoad } = this.state;
     return (
       <Fragment>
-        <h1 className="my-3">POKEDEX</h1>
         <Query query={POKEMONS_LIST_QUERY} variables={{ fetchNumber }}>
           {({ loading, error, data }) => {
             if (loading && firstLoad) return <Loading />;

@@ -41,3 +41,11 @@ code {
   display: flex;
   justify-content: center;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
