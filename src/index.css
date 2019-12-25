@@ -36,3 +36,8 @@ code {
   width: 100px;
   object-fit: contain;
 }
+
+.pokemon-detail {
+  display: flex;
+  justify-content: center;
+}
