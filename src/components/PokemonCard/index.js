@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import Badges from "./common/Badges";
+import Badges from "../common/Badges";
 
 const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
   return (

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonCard snapshot renders 1`] = `
+<div
+  className="my-3 col-sm-4 col-12"
+>
+  <a
+    href="/pokemon/UG9rZW1vbjowMDE="
+    onClick={[Function]}
+  >
+    <div
+      className="card-home card"
+    >
+      <img
+        className="card-img-top"
+        src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+      />
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        >
+          001 - Bulbasaur
+        </div>
+        <span
+          className="mr-1 badge badge-info"
+        >
+          Grass
+        </span>
+        <span
+          className="mr-1 badge badge-info"
+        >
+          Poison
+        </span>
+      </div>
+    </div>
+  </a>
+</div>
+`;

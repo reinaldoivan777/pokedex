@@ -20,8 +20,8 @@ const POKEMONS_LIST_QUERY = gql`
 `;
 
 export class PokemonList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       fetchNumber: 30,
       firstLoad: true,
