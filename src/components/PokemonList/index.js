@@ -8,8 +8,8 @@ import PokemonCard from "../PokemonCard";
 import Loading from "../common/Loading";
 
 export const POKEMONS_LIST_QUERY = gql`
-  query PokemonList($first: Int!, $searchByName: String) {
-    pokemons(first: $first, searchByName: $searchByName) {
+  query PokemonList($fetchNumber: Int!, $searchByName: String) {
+    pokemons(first: $fetchNumber, searchByName: $searchByName) {
       name
       id
       number
@@ -30,8 +30,8 @@ export class PokemonList extends Component {
   }
 
   handleScroll = debounce(() => {
-    const { first } = this.state;
-    let currentNumber = first;
+    const { fetchNumber } = this.state;
+    let currentNumber = fetchNumber;
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
@@ -55,7 +55,7 @@ export class PokemonList extends Component {
   }, 100);
 
   render() {
-    const { first, firstLoad, searchByName } = this.state;
+    const { fetchNumber, firstLoad, searchByName } = this.state;
     return (
       <Fragment>
         <div className="row">
@@ -67,7 +67,10 @@ export class PokemonList extends Component {
             />
           </div>
         </div>
-        <Query query={POKEMONS_LIST_QUERY} variables={{ first, searchByName }}>
+        <Query
+          query={POKEMONS_LIST_QUERY}
+          variables={{ fetchNumber, searchByName }}
+        >
           {({ loading, error, data }) => {
             if (loading && firstLoad) return <Loading />;
             if (error) console.log(error);

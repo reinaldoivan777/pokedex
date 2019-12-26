@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { isEmpty } from "lodash";
 
@@ -18,6 +18,11 @@ const PokemonCard = ({ pokemon }) => {
               <Card.Title>{`${number} - ${name}`}</Card.Title>
               {types.length && <Badges datas={types} variant="info" />}
             </Card.Body>
+            <div className="overlay">
+              <Button className="middle" variant="primary">
+                MORE DETAILS
+              </Button>
+            </div>
           </Card>
         </Link>
       </Col>
