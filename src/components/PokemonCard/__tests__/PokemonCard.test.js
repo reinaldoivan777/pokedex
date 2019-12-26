@@ -20,6 +20,22 @@ describe("PokemonCard", () => {
     );
   });
 
+  it("empty data", () => {
+    renderer.create(
+      <Router>
+        <PokemonCard pokemon={{}} />
+      </Router>
+    );
+  });
+
+  it("data null", () => {
+    renderer.create(
+      <Router>
+        <PokemonCard pokemon={null} />
+      </Router>
+    );
+  });
+
   it("snapshot renders", () => {
     const data = {
       name: "Bulbasaur",

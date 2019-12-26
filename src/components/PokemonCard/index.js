@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { isEmpty } from "lodash";
 
 import Badges from "../common/Badges";
 
-const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
+const PokemonCard = ({ pokemon }) => {
+  if (!pokemon || isEmpty(pokemon)) return null;
+  const { name, id, number, image, types } = pokemon;
   return (
     <Fragment>
       <Col xs={12} sm={4} className="my-3">
