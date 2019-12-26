@@ -3,11 +3,11 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { Card, ListGroup } from "react-bootstrap";
 
-import Loading from "./common/Loading";
-import Badges from "./common/Badges";
-import Evolutions from "./Evolutions";
+import Loading from "../common/Loading";
+import Badges from "../common/Badges";
+import Evolutions from "../Evolutions";
 
-const POKEMON_DETAIL = gql`
+export const POKEMON_DETAIL = gql`
   query PokemonDetail($id: String) {
     pokemon(id: $id) {
       name

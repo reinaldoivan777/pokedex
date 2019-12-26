@@ -4,10 +4,10 @@ import { Query } from "react-apollo";
 import { Row } from "react-bootstrap";
 import { debounce } from "lodash";
 
-import PokemonCard from "./PokemonCard";
-import Loading from "./common/Loading";
+import PokemonCard from "../PokemonCard";
+import Loading from "../common/Loading";
 
-const POKEMONS_LIST_QUERY = gql`
+export const POKEMONS_LIST_QUERY = gql`
   query PokemonList($fetchNumber: Int!, $searchByName: String) {
     pokemons(first: $fetchNumber, searchByName: $searchByName) {
       name
