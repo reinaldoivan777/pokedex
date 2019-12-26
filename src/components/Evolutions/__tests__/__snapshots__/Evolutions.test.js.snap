@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Evolutions snapshot renders 1`] = `
+Array [
+  <a
+    href="/pokemon/UG9rZW1vbjowMDI="
+    onClick={[Function]}
+  >
+    <div
+      className="text-left evolution-item"
+    >
+      <img
+        alt="Ivysaur"
+        className="ml-3 image-evolution"
+        src="https://img.pokemondb.net/artwork/ivysaur.jpg"
+      />
+      <span
+        className="mx-3"
+      >
+        002 --- Ivysaur
+      </span>
+    </div>
+  </a>,
+  <a
+    href="/pokemon/UG9rZW1vbjowMDM="
+    onClick={[Function]}
+  >
+    <div
+      className="text-left evolution-item"
+    >
+      <img
+        alt="Venusaur"
+        className="ml-3 image-evolution"
+        src="https://img.pokemondb.net/artwork/venusaur.jpg"
+      />
+      <span
+        className="mx-3"
+      >
+        003 --- Venusaur
+      </span>
+    </div>
+  </a>,
+]
+`;

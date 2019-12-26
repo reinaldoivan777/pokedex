@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badges snapshot renders 1`] = `
+Array [
+  <span
+    className="mr-1 badge"
+  >
+    fire
+  </span>,
+  <span
+    className="mr-1 badge"
+  >
+    electric
+  </span>,
+]
+`;

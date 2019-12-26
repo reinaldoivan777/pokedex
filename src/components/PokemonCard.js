@@ -13,7 +13,7 @@ const PokemonCard = ({ pokemon: { name, id, number, image, types } }) => {
             <Card.Img variant="top" src={image} />
             <Card.Body>
               <Card.Title>{`${number} - ${name}`}</Card.Title>
-              <Badges datas={types} variant="info" />
+              {types.length && <Badges datas={types} variant="info" />}
             </Card.Body>
           </Card>
         </Link>
