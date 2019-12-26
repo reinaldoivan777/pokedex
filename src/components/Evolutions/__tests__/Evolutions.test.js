@@ -5,21 +5,22 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Evolutions from "../index";
 
 describe("Evolutions", () => {
+  const datas = [
+    {
+      id: "UG9rZW1vbjowMDI=",
+      name: "Ivysaur",
+      number: "002",
+      image: "https://img.pokemondb.net/artwork/ivysaur.jpg"
+    },
+    {
+      id: "UG9rZW1vbjowMDM=",
+      name: "Venusaur",
+      number: "003",
+      image: "https://img.pokemondb.net/artwork/venusaur.jpg"
+    }
+  ];
+
   it("render without error", () => {
-    const datas = [
-      {
-        id: "UG9rZW1vbjowMDI=",
-        name: "Ivysaur",
-        number: "002",
-        image: "https://img.pokemondb.net/artwork/ivysaur.jpg"
-      },
-      {
-        id: "UG9rZW1vbjowMDM=",
-        name: "Venusaur",
-        number: "003",
-        image: "https://img.pokemondb.net/artwork/venusaur.jpg"
-      }
-    ];
     renderer.create(
       <Router>
         <Evolutions datas={datas} />
@@ -44,20 +45,6 @@ describe("Evolutions", () => {
   });
 
   it("snapshot renders", () => {
-    const datas = [
-      {
-        id: "UG9rZW1vbjowMDI=",
-        name: "Ivysaur",
-        number: "002",
-        image: "https://img.pokemondb.net/artwork/ivysaur.jpg"
-      },
-      {
-        id: "UG9rZW1vbjowMDM=",
-        name: "Venusaur",
-        number: "003",
-        image: "https://img.pokemondb.net/artwork/venusaur.jpg"
-      }
-    ];
     const component = renderer.create(
       <Router>
         <Evolutions datas={datas} />
