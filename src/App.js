@@ -9,7 +9,7 @@ import PokemonList from "./components/PokemonList";
 import PokemonDetail from "./components/PokemonDetail";
 
 const client = new ApolloClient({
-  uri: "http://localhost:5000"
+  uri: "https://graphql-pokemon.now.sh/"
 });
 
 function App() {

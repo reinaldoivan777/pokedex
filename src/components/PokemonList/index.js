@@ -8,8 +8,8 @@ import PokemonCard from "../PokemonCard";
 import Loading from "../common/Loading";
 
 export const POKEMONS_LIST_QUERY = gql`
-  query PokemonList($fetchNumber: Int!, $searchByName: String) {
-    pokemons(first: $fetchNumber, searchByName: $searchByName) {
+  query PokemonList($fetchNumber: Int!) {
+    pokemons(first: $fetchNumber) {
       name
       id
       number
@@ -58,15 +58,6 @@ export class PokemonList extends Component {
     const { fetchNumber, firstLoad, searchByName } = this.state;
     return (
       <Fragment>
-        <div className="row">
-          <div className="offset-sm-4 col-sm-4">
-            <input
-              placeholder="Search"
-              className="form-control"
-              onChange={e => this.handleChange(e.target.value)}
-            />
-          </div>
-        </div>
         <Query
           query={POKEMONS_LIST_QUERY}
           variables={{ fetchNumber, searchByName }}
