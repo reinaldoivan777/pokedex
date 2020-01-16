@@ -5,18 +5,10 @@ because I add filter feature which not yet available in this API https://graphql
 
 So please follow this instruction:
 
-1. Clone the graphql pokemon server apps
-### `git clone https://github.com/reinaldoivan777/graphql-pokemon.git`
-
-2. Install dependencies and run the graphql pokemon server apps
-### `yarn`
-### `yarn watch`
-graphql server will be run locally on http://localhost:5000
-
-3. Clone frontend pokemon apps
+1. Clone frontend pokemon apps
 ### `git clone https://github.com/reinaldoivan777/pokedex.git`
 
-4. Install dependencies and run the frontend apps
+2. Install dependencies and run the frontend apps
 ### `yarn`
 ### `yarn start`
 
